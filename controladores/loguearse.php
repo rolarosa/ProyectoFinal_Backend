@@ -2,19 +2,19 @@
 
 error_reporting(E_ALL);
 ini_set ('display_errors', 1);
-
-//Llamado Base de Datos
-include(ROOT_DIR . '/controladores/conexionsql.php');
-$enlace = [];
-
 $data = $_POST;
 
+//Conexión Base de Datos
+$enlace = mysqli_connect("localhost", "root", "", "optica_lentsur");
 if (!$enlace) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_errno() . PHP_EOL;
     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit; 
   }
+//include(ROOT_DIR . '/controladores/conexionsql.php');
+//$enlace = [];
+
 //Validación de usuario y la contraseña
 $sql = "SELECT * FROM usuarios WHERE dni= '".$data["dni"]."'"; 
 $result = mysqli_query($enlace, $sql);

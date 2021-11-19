@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2021 a las 04:08:06
+-- Tiempo de generación: 19-11-2021 a las 21:03:55
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -60,10 +60,16 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `marca`, `modelo`, `características`, `precio`, `color`, `stock_disponible`, `categoría`, `imagen`) VALUES
-(1, 'Valdez', 'Clipper 127', 'metal', 7600, 'Negro', 1, 'Marcos para receta', 'recetados 01.png'),
-(2, '47 Street', 'BKL', 'Material plástico zyl', 8700, 'Negras', 1, 'Marcos para receta', 'recetados 02.png'),
-(3, '47 Street ', 'Power', 'Plástico zyl opacas', 8300, 'negras', 1, 'Marcos recetados', 'recetados 03.png'),
-(4, '47 Street', 'PNK 2', 'Plástico zyl transparentes', 6300, 'Rosa', 1, 'Marcos recetados', 'recetados 04.png');
+(1, 'Valdez', 'Clipper 127', 'Metal', 7600, 'Negra', 1, 'Marcos recetados', 'recetados 01.png'),
+(2, '47 Street', 'BKL', 'Material plástico zyl', 8700, 'Negra', 1, 'Marcos recetados', 'recetados 02.png'),
+(3, 'Union Pacific', 'Power', 'Plástico zyl opacas', 8300, 'Negra', 1, 'Marcos recetados', 'recetados 03.png'),
+(4, 'Sarkany', 'PNK 2', 'Plástico zyl transparentes', 6300, 'Rosa', 1, 'Marcos recetados', 'recetados 04.png'),
+(5, 'Armani Exchange', 'DW3', 'Metal y plástico zyl ', 5552, 'Jaspeado marrón/negro', 1, 'Marcos recetados', 'recetados 05'),
+(6, 'Monkey Grove', 'Skay BLK', 'Cristales orgánicos polarizados tono azul.', 9700, 'Negra', 1, 'Gafas de sol deportivas.', 'sol 01'),
+(7, 'Rusty', 'Snow wey', 'Plásticas, orgánicas espejadas tornasoladas fucsias', 10120, 'Negra', 1, 'Gafas deportivas', 'sol 02'),
+(8, 'Vulk', 'Print ', 'Plasticas, orgánicas polarizados con antireflex.', 12500, 'Animal print marrón/negro', 1, 'Lentes de sol. Casual', 'sol 03'),
+(9, 'Valeria Massa', 'Chick', 'Clipper metal doradas', 13200, 'Doradas, polarizadas antireflex', 1, 'Lentes de sol. Casual', 'sol 04'),
+(10, 'Tifanny', 'Cinetic', 'Cristales sin marco orgánicas, patillas metal. ', 14200, 'Marrón', 1, 'Lentes de sol. Casual', 'sol 05');
 
 -- --------------------------------------------------------
 

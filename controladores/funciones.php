@@ -4,7 +4,9 @@
 error_reporting(E_ALL);
 ini_set ('display_errors', 1);
 
-include (ROOT_DIR . '/modelos/modelo.php');
+include ('modelos/modelo.php');
+$enlace = mysqli_connect("localhost", "root", "", "optica_lentsur");
+//include (ROOT_DIR . '/modelos/modelo.php');
 
 //Definición de la Función
 function traer_items(){

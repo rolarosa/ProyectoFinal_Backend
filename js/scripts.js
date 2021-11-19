@@ -49,12 +49,29 @@
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
- 
-   
 
-//$('.btn-agregar').click(function(){ 
-    //console.log ("soy una " + $(this).attr("data-nombre") + "y salgo" + $(this).attr("data-precio"));
 })(jQuery); 
+
+//Botón prueba de carrito    
+// $('.btn-agregar').click(function(){
+//alert ("hola, hiciste click!");})
+
+//Agregar a carrito.php, agrega productos suma/ multiplica y genera subtotal
+$('.btn-agregar').click(function(){ 
+    console.log("soy " + $(this).attr("data-marca") + "el modelo es" + $(this).attr("data-modelo") + "y salgo" + $(this).attr("data-precio"));
     
-    $('.btn-agregar').click(function(){
-    alert ("hola, hiciste click!");})
+    
+    //var precio = $(this).attr("data-precio")
+    //$.post ("agregar_carrito.php", {precio: precio}, function (result){
+    //alert("producto insertado!");
+    //});
+})
+$('#cantidad').change(function(){ 
+    var cantidad = $(this).val(); //val es propiedad de los input
+    var precio = $('#precio').text(); //precio no es un input
+    var subtotal = cantidad * precio;
+    $ ("#subtotal").text (subtotal);
+})   
+    //console.log(subtotal); Probando si imprime en consola cantidad y multiplica los valores en subtotal.
+    //var subtotal = parseInt($(this) .val()) * paseInt($('#precio') .val());  //variable que guarda precio*cantidad
+    //console.log(precio);

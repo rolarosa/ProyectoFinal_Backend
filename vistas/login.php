@@ -3,7 +3,7 @@
     <head>
     <link href="../css/styles.css" rel="stylesheet" />
     <?php include('head.php');
-         ?>
+    ?>
     </head>
     <body id="page-top">
          <!-- Navigation navbar-auto-->

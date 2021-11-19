@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
     <?php
-    define('BASE_URL', 'http://localhost/');
-    define('ROOT_DIR', __DIR__);
-
-        error_reporting(E_ALL);
-        ini_set ('display_errors', 1);
-        include('controladores/funciones.php');
-        $productos = traer_items();
-        echo json_encode($productos);
-        exit;
-        include('vistas/head.php');
+    error_reporting(E_ALL);
+    ini_set ('display_errors', 1);
+        //define('BASE_URL', 'http://localhost/');
+        //define('ROOT_DIR', __DIR__);
+      include('vistas/head.php');
+      include('controladores/funciones.php');
+      $productos = traer_items();
+      include('modelos/modelo.php');
+      
+      
     ?>
     </head>
     <body id="page-top">
@@ -52,7 +52,7 @@
                       <h4 class="text-left"><?php echo $producto ['modelo']; ?></h4>
                       <h5 class="text-left">$<?php echo $producto ['precio']; ?></h5>
                       </a>
-                      <button  class="btn btn-agregar">Agregar</button>
+                      <button data-marca="<?php echo $producto ['marca']; ?>" data-modelo="<?php echo $producto ['modelo']; ?>" data-precio="<?php echo $producto ['precio']; ?>" class="btn btn-agregar">Agregar</button>
                     </div>
                   </div>
                 <?php }?>
