@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <?php
-    error_reporting(E_ALL);
-    ini_set ('display_errors', 1);
-        //define('BASE_URL', 'http://localhost/');
-        //define('ROOT_DIR', __DIR__);
-      include('vistas/head.php');
-      include('controladores/funciones.php');
-      $productos = traer_items();
-      include('modelos/modelo.php');
-      
-      
-    ?>
-    </head>
+      <?php
+        error_reporting(E_ALL);
+        ini_set ('display_errors', 1);      
+        include('vistas/head.php');
+        include('controladores/funciones.php');
+        $productos = traer_items();       
+      ?>
+       </head>
     <body id="page-top">
         <!-- Navigation--> 
         <?php
-        include('vistas/navbar.php')
+        session_start(); 
+        var_dump($_SESSION);
+        if ($_SESSION ['user']!= ""){
+          include ('vistas/navbar_logueado.php');
+        } else {
+          include ('vistas/navbar_no_logueado.php');
+        }
         ?>
         <!-- Masthead-->
     <header class="masthead">
@@ -25,8 +26,8 @@
           <div class="col-6 mx-auto">
             <div class="text-left">
                 <h1 class="my-0">Lookeate con estos lentes!</h1>
-                <h2 class="mt-3 mb-5">Comprá online desde tu casa y te lo llevamos.</h2>
-                <h2 class="mt-3 mb-5">Para verte mejor, pecio y calidad!!</h2>
+                <h2 class="mt-3 mb-5">Comprá online desde tu casa</h2>
+                <h3 class="mt-3 mb-5">Te esperamos en nuestras tiendas!</h3>
             </div>
           </div>
           <div class="col-6">
@@ -39,7 +40,7 @@
             <div class="container">
                 <div class="row mx-auto text-center">
                   <div class="col-lg-8 mx-auto">
-                      <h3 class="mb-4">Marcos recetados y sol</h3>
+                      <h3 class="mb-4">Mirate estos lentes</h3>
                   </div>
                 </div>
 
@@ -47,12 +48,12 @@
                 <?php foreach($productos as $producto){ ?>
                   <div class="col-xl-3 col-6 mt-4">
                     <div class="producto text-center p-4">
-                      <img src="<?php echo $producto ['imagen'];?>"/>
+                      <img src="assets/<?php echo $producto ['imagen'];?>.png"/>
                       <h4 class="text-left"><?php echo $producto ['marca']; ?></h4>
                       <h4 class="text-left"><?php echo $producto ['modelo']; ?></h4>
                       <h5 class="text-left">$<?php echo $producto ['precio']; ?></h5>
-                      </a>
-                      <button data-marca="<?php echo $producto ['marca']; ?>" data-modelo="<?php echo $producto ['modelo']; ?>" data-precio="<?php echo $producto ['precio']; ?>" class="btn btn-agregar">Agregar</button>
+                      </a>            
+                      <button data-id="<?php echo $producto['id']; ?>" data-imagen="<?php echo $producto ['imagen']; ?>" data-marca="<?php echo $producto ['marca']; ?>" data-modelo="<?php echo $producto ['modelo']; ?>" data-precio="<?php echo $producto ['precio']; ?>" class="btn btn-agregar">Agregar</button>
                     </div>
                   </div>
                 <?php }?>

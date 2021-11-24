@@ -52,26 +52,35 @@
 
 })(jQuery); 
 
-//Botón prueba de carrito    
-// $('.btn-agregar').click(function(){
-//alert ("hola, hiciste click!");})
-
-//Agregar a carrito.php, agrega productos suma/ multiplica y genera subtotal
 $('.btn-agregar').click(function(){ 
-    console.log("soy " + $(this).attr("data-marca") + "el modelo es" + $(this).attr("data-modelo") + "y salgo" + $(this).attr("data-precio"));
-    
-    
-    //var precio = $(this).attr("data-precio")
-    //$.post ("agregar_carrito.php", {precio: precio}, function (result){
-    //alert("producto insertado!");
-    //});
+    var id_usuario = $("#user_dni").val();
+    var id = $(this).attr("data-id");
+    var imagen = $(this).attr("data-imagen");
+    var marca = $(this).attr("data-marca");
+    var modelo = $(this).attr("data-modelo");
+    var precio = $(this).attr("data-precio");
+    console.log(id, id_usuario);
+    $.post("controladores/agregar_carrito.php", {
+        id: id, 
+        id_usuario: id_usuario,
+        imagen: imagen,
+        marca: marca,
+        modelo: modelo,
+        precio: precio 
+    }, function(result){
+        alert("producto insertado!");
+    });
 })
-$('#cantidad').change(function(){ 
-    var cantidad = $(this).val(); //val es propiedad de los input
-    var precio = $('#precio').text(); //precio no es un input
+$('.cantidad').change(function(){ 
+    var cantidad = $(this).val();           
+    var precio = $(this).parent().parent().find('.precio').text();       
     var subtotal = cantidad * precio;
-    $ ("#subtotal").text (subtotal);
-})   
-    //console.log(subtotal); Probando si imprime en consola cantidad y multiplica los valores en subtotal.
-    //var subtotal = parseInt($(this) .val()) * paseInt($('#precio') .val());  //variable que guarda precio*cantidad
-    //console.log(precio);
+    console.log (subtotal, precio);
+    $(this).parent().parent().find('.subtotal').text(subtotal);
+    total = 0;
+    $(".subtotal").each(function() { 
+        total = parseInt($(this).text()) + total;
+    }); 
+    $("#total").text(total);
+})
+

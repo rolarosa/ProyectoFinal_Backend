@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
     <link href="../css/styles.css" rel="stylesheet" />
-        <?php include('head.php');
+        <?php include('head.php')
         ?>
     </head>
     <body id="page-top">
@@ -15,7 +15,7 @@
                 <h1 class="my-0 txt-black mb-4">registro</h1>
                 <div class="row">
                   <div class="col-lg-8 col-12 mx-auto">
-                    <form method="post" action="controladores/registrarse.php">     
+                    <form method="post" action="../controladores/registrarse.php">     
                       <div class="row mb-3">
                   <div class="col">
                       <input type="text" name="dni" class="form-control" placeholder="DNI">
