@@ -1,4 +1,4 @@
-**# backend_optica**
+# ** backend_optica ** 
 ** Es necesario descargar el repositorio para ver la interfaz andando **
 *Realizar la conexión a BD*
 #Conexion a sql: optica_lentsur.sql
