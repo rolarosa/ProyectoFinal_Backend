@@ -1,4 +1,4 @@
-# ** Backend_optica ** 
+# ** Backend ** 
 ** Es necesario descargar el repositorio para ver la interfaz andando **
 
 > *Realizar la conexión a BD.*
