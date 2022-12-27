@@ -1,5 +1,5 @@
 # backend_optica
-Conexion a sql: conexion_sql.php
+Conexion a sql: optica_lentsur.sql
 Función de carrito, bd registro, y loguin
 Conectar: la API MP
 Pasarela de pago
